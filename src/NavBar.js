@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
 import NavigationBar from 'react-native-navbar';
-import { StyleSheet } from 'react-native';
+import React, { Component, StyleSheet } from 'react-native';
 
 const leftButton = (props = {}, transitioning) => {
-  if (props.navLeft && props.navLeft._isReactElement) {
+  if (props.navLeft) {
     return props.navLeft;
   }
 
@@ -24,8 +23,11 @@ const leftButton = (props = {}, transitioning) => {
 };
 
 const rightButton = (props = {}) => {
-  if (props.navRight && props.navRight._isReactElement) {
-    return props.navRight;
+
+  if (props.navRight) {
+    return React.cloneElement(props.navRight, {
+      routerData: props.route.passProps.routerData,
+    })
   }
 
   return {
@@ -42,8 +44,10 @@ const statusBar = props => ({
 });
 
 const title = props => {
-  if (props.navTitle && props.navTitle._isReactElement) {
-    return props.navTitle;
+  if (props.navTitle) {
+      return React.cloneElement(props.navTitle, {
+        routerData: props.route.passProps.routerData,
+      })
   }
 
   return {
