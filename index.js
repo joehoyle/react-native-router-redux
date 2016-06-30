@@ -197,6 +197,7 @@ class Router extends React.Component {
         navigator: navigator,
         route: route,
         router: this.props.router,
+        ...this.props
       });
     }
 
