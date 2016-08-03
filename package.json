@@ -15,6 +15,6 @@
   "license": "MIT",
   "dependencies": {
     "react-native-navbar": "joehoyle/react-native-navbar",
-    "react-native-tabs": "malkomalko/react-native-tabs"
+    "react-native-tabs": "^1.0.9"
   }
 }
